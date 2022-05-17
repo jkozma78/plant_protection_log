@@ -9,9 +9,8 @@ def home():
     for i in range(1, 111):
         i = str(i)
 
-        # dict == {}
-        # you just don't have to quote the keys
-        an_item = dict(date="2012-02-" + i, id=i, position="here", status="waiting")
+
+        an_item = dict(id=i, date="2012-02-24", chemical="here", plant="waiting", area="fólia", comment="")
         items.append(an_item)
 
     return render_template('plant2.html', items=items)
