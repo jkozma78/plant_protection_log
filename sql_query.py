@@ -3,11 +3,11 @@ from Flask_sql import *
 
 db.create_all()
 
-vat = list()
-firm = list()
+
+items = []
 for i in PlantProtectionLog.query.all():
-    vat.append(i.id)
-    firm.append(i.date)
+    an_item = dict(id=i.id, date=i.date, chemical=i.chemical, plant=i.plant, area=i.area, comment=i.comment)
+    items.append(an_item)
 # try:
 #     new = User(vatnumber='12345678-3-92', persons="Békés Csaba", address="Tb.")
 #     db.session.add(new)
