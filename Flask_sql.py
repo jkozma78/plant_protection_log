@@ -1,10 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pp.db'
-#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
+pp = Flask(__name__)
+pp.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pp.db'
+pp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(pp)
 
 
 class PlantProtectionLog(db.Model):
