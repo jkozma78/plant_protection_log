@@ -21,12 +21,11 @@ def home():
 
             db.session.add(new)
             db.session.commit()
-            #items.append(new)
-    return render_template("home.html")
+            return render_template("home.html")
     #return render_template('plant.html', items=items)
+    return render_template("home.html")
 
-
-@pp.route('/index')
+@pp.route('/plant')
 def index():
     return render_template('plant.html', items=items)
 
