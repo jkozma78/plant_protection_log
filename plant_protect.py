@@ -1,4 +1,4 @@
-from flask import render_template, request, url_for, redirect
+from flask import render_template, request
 from sql_query import items
 from Flask_sql import *
 
@@ -21,18 +21,18 @@ def home():
 
             db.session.add(new)
             db.session.commit()
-            #_id = len(items) + 1
-            id=(len(items))+1
+
+            ids = (len(items)) + 1
             items.append(
-                {"id": id, "dated": _dated, "chemical": _chemical, "plant": _plant, "area": _area,
+                {"id": ids, "dated": _dated, "chemical": _chemical, "plant": _plant, "area": _area,
                  "comment": _comment})
-            # print(items)
+
     return render_template("home.html")
 
 
 @pp.route('/plant')
 def index():
-    # print(items)
+
     return render_template('plant.html', items=items)
 
 
