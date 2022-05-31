@@ -21,15 +21,18 @@ def home():
 
             db.session.add(new)
             db.session.commit()
-            items.append({_dated,_chemical,_plant,_area,_comment})
-            print(items)
+            #_id = len(items) + 1
+            id=(len(items))+1
+            items.append(
+                {"id": id, "dated": _dated, "chemical": _chemical, "plant": _plant, "area": _area,
+                 "comment": _comment})
+            # print(items)
     return render_template("home.html")
-
 
 
 @pp.route('/plant')
 def index():
-    print(items)
+    # print(items)
     return render_template('plant.html', items=items)
 
 
