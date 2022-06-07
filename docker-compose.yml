@@ -4,10 +4,8 @@ services:
   build: .
   ports:
    - "5000:5000"
-  depends_on:
-   - redis
+  volumes:
+   - "./pp.db:/pp.db"
   restart: always
 
- redis:
-  image: "redis:alpine"
-  restart: always
+ 
