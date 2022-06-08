@@ -32,10 +32,9 @@ def home():
 
 @pp.route('/plant')
 def index():
-
     return render_template('plant.html', items=items)
 
 
 if __name__ == "__main__":
     pp.run(debug=True)
-    #pp.run(host='0.0.0.0', port=80, debug=True)
+    # pp.run(host='0.0.0.0', port=80, debug=True)
